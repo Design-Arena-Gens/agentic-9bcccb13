@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Tutano";
+  src: url("https://fonts.cdnfonts.com/s/21933/Tutano-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --token-primary: #FF5A5F;
+  --token-secondary: color-mix(in srgb, var(--token-primary) 18%, white);
+  --token-accent: color-mix(in srgb, var(--token-primary) 46%, black 12%);
+  --token-surface: color-mix(in srgb, var(--token-primary) 6%, white);
+  --token-background: color-mix(in srgb, white 90%, var(--token-primary) 10%);
+  --token-neutral: color-mix(in srgb, var(--token-primary) 4%, black 92%);
+  --font-logo: "Tutano", var(--font-inter), system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-primary: var(--token-primary);
+  --color-secondary: var(--token-secondary);
+  --color-accent: var(--token-accent);
+  --color-surface: var(--token-surface);
+  --color-background: var(--token-background);
+  --color-neutral: var(--token-neutral);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-logo);
+}
+
+body {
+  background: radial-gradient(
+      circle at top,
+      color-mix(in srgb, var(--token-primary) 14%, white) 0%,
+      color-mix(in srgb, var(--token-primary) 4%, white) 55%,
+      var(--token-background) 100%
+    );
+  color: var(--token-neutral);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
